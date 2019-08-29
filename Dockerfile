@@ -15,7 +15,7 @@ RUN set -x \
 
 FROM alpine
 
-RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+RUN apk add --no-cache ca-certificates
 COPY --from=build /qshell /usr/bin/qshell
 RUN chmod +x /usr/bin/qshell
 
